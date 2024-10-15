@@ -190,135 +190,6 @@ body {
     width: 125px;
 }
 
-/* Knowledge */
-
-.knowledge {
-    background-color: #e1e1f8;
-    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #bbbbd1 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-    overflow: hidden;
-}
-.knowledge__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4em;
-    align-items: center;
-}
-.knowledge__picture{
-    max-width: 500px;
-}
-.knowledge__paragraph{
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-.knowledge__img{
-    width: 100%;
-    display: block;
-}
-
-/* Knowledges */
-
-.knowledges {
-    background-color: #e4e4fa;
-    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #ccccff 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-    overflow: hidden;
-}
-.knowledges__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3em;
-    align-items: center;
-}
-.knowledges__picture{
-    max-width: 500px;
-}
-.knowledges__paragraph{
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-.knowledges__img{
-    width: 90%;
-    display: block;
-}
-
-/* Knowledgess */
-
-.knowledgess {
-    background-color: #e4e4fa;
-    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #939395 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-    overflow: hidden;
-}
-.knowledgess__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4em;
-    align-items: center;
-}
-.knowledgess__picture{
-    max-width: 500px;
-}
-.knowledgess__paragraph{
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-.knowledgess__img{
-    width: 100%;
-    display: block;
-}
-
-/* Testimony */
-
-.testimony{
-    background-color: #f6f6f6;
-}
-.testimony__container{
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    gap: 1em;
-    align-items: center;
-}
-.testimony__body{
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2em;
-    grid-column: 2/3;
-    grid-row: 1/2;
-    opacity: 0;
-    pointer-events: none;
-}
-.testimony__body--show{
-    pointer-events: unset;
-    opacity: 1;
-    transition: opacity 1.5s ease-in-out;
-}
-.testimony__img{
-    width: 270px;
-    height: 260px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 50% 30%;
-}
-.testimony__texts{
-    max-width: 700px;
-}
-.testimony__course{
-    background-color: rgb(115, 143, 226);
-    color: #fff;
-    display: inline-block;
-    padding: 5px;
-}
-.testimony__arrow{
-    width: 90%;
-    cursor: pointer;
-}
-
 /* Questions */
 
 .questions{
@@ -399,7 +270,7 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #fff;
-    padding-bottom: 60px;
+    padding-bottom: 5px;
 }
 .nav--footer{
     padding-bottom: 20px;
@@ -441,7 +312,7 @@ body {
 .footer__submit {
     margin-left: auto;
     display: inline-block;
-    height: 50px;
+    height: 20px;
     padding: 0 20px;
     background-color: #2091F9;
     border: none;
@@ -460,7 +331,7 @@ body {
 }
 
 .footer__copy{
-    --padding-container: 30px 0;
+    --padding-container: 15px 0;
     text-align: center;
     color: #fff;
 }
