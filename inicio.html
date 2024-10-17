@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOXICONS -->
+    <script src="https://kit.fontawesome.com/e392773b6f.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Iniciar sesion</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Inicia sesion</button>
+                <button class="btn" id="registerBtn" onclick="register()">Registrar</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="MyMenuFunction()"></i>
+            </div>
+        </nav>
+    
+        <div class="form-box">
+            <span id="closeIcon" class="icono-cerrar"><i class="fa-solid fa-xmark" style="color: rgba(255, 255, 255, 0.4);"></i></span>
+
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>No te has Registrado?<a href="#" onclick="register()">Registrate</a></span>
+                    <header>Inicio sesion</header>
+                </div>
+
+                <form action="process.php" method="POST" onsubmit="return validateForm('login')">
+                    <div class="input-box">
+                        <input type="email" class="input-field" name="email" placeholder="Usuario o Email" required />
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="password" placeholder="Contrasena" required />
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <input type="hidden" name="formType" value="login">
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Acceso" />
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="login-check" />
+                            <label for="login-check"> Recordar sesion</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Olvidaste la contraseña?</a></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="register-container" id="register">
+                <div class="top">
+                    <span>tenes una cuenta? <a href="#" onclick="login()">Acceso</a></span>
+                    <header>Registrate</header>
+                </div>
+
+                <form action="process.php" method="POST" onsubmit="return validateForm('register')">
+                    <div class="two-forms">
+                        <div class="input-box">
+                            <input type="text" class="input-field" name="apellido" placeholder="Apellido Completo" required />
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" class="input-field" name="nombre" placeholder="Nombre Completo" required />
+                            <i class="bx bx-user"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input-field" name="email" placeholder="Email" required />
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="password" placeholder="Contrasena" required />
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <input type="hidden" name="formType" value="register">
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Registrar" />
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="register-check" />
+                            <label for="register-check"> Recordar Registro</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Terminos & Condiciones</a></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function MyMenuFunction() {
+        var i = document.getElementById("navMenu");
+        
+        if (i.className === "nav-menu") {
+        i.className += " responsive";
+        } else {
+        i.className = "nav-menu";
+        }
+        }
+        
+        var a = document.getElementById("loginBtn");
+        var b = document.getElementById("registerBtn");
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        
+        function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+        }
+        function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+        }
+        
+        function validateForm(formType) {
+        var inputs;
+        var errorMessage;
+        
+        if (formType === 'login') {
+        inputs = document.querySelectorAll('.login-container .input-field');
+        errorMessage = 'Por favor, llena todos los campos para iniciar sesion.';
+        } else if (formType === 'register') {
+        inputs = document.querySelectorAll('.register-container .input-field');
+        errorMessage = 'Por favor, llena todos los campos para registrarte.';
+        } else {
+        return false;
+        }
+        
+        var isValid = true;
+        
+        inputs.forEach(function(input) {
+        if (input.value.trim() === '') {
+        input.classList.add('error');
+        isValid = false;
+        } else {
+        input.classList.remove('error');
+        }
+        });
+        
+        if (!isValid) {
+        alert(errorMessage);
+        }
+        
+        return isValid;
+        }
+        
+        var closeIcon = document.getElementById("closeIcon");
+        closeIcon.addEventListener("click", function() {
+        
+        var formBox = document.querySelector(".form-box");
+        formBox.style.display = "none"; // Ocultar el formulario al hacer clic en el icono de cierre
+        });
+        
+        var navButton = document.querySelector(".nav-button");
+        navButton.addEventListener("click", function() {
+        
+        var formBox = document.querySelector(".form-box");
+        formBox.style.display = "flex"; // Mostrar el formulario al hacer clic en el boton de navegacion
+        });
+    </script>
+</body>
+</html>
