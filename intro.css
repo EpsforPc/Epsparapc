@@ -1,1 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
 
+header {
+    background-color: plum; /* Color femenino atractivo */
+    color: white;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: 'Cocogoose Pro';
+    font-weight: 700;
+    text-transform: none;
+    font-size: 50px;
+    display: block;
+    line-height: 0px;
+    color: white;
+}
+
+.MilagrosLetraPequeña {
+    /* font-family: Palace, sans-serif; */
+    font-family: 'Cocogoose Pro';
+    font-weight: 700;
+    text-transform: none;
+    font-size: 30px;
+    display: block;
+    line-height: 0px;
+    color: white;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #ffafcc; /* Bordes para las imágenes */
+}
+
+.service-card h2 {
+    margin: 15px 0 5px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.service-card p {
+    color: #777;
+    font-size: 0.9em;
+}
