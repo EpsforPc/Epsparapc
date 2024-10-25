@@ -2,7 +2,7 @@
 $servername = "mysql.webcindario.com";
 $username = "epsparapc";
 $password = "epsparapc2205";
-$dbname = "epsparapc";
+$dbname = "users";
 
 // Crear conexi�n
 $conn = new mysqli($servername, $username, $password, $dbname);
