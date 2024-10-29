@@ -1,12 +1,22 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+// sesion.js
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    
-    if (username === "Cliente" && password === "1234") {
-        window.location.href = 'inicio.html';
-    } else {
-        document.getElementById('message').innerText = "Usuario o contraseña incorrectos.";
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("loginForm");
+
+    // Agregar un manejador de eventos para el envío del formulario
+    loginForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Evitar el envío automático del formulario
+
+        // Obtener los valores de los campos de entrada
+        const username = loginForm.querySelector('input[type="text"]').value;
+        const password = loginForm.querySelector('input[type="password"]').value;
+
+        // Validar los datos (en este ejemplo, solo se hace una verificación sencilla)
+        if (username === "usuario" && password === "1234") {
+            window.location.href = 'prueba.html';
+            // Aquí puedes redirigir a otra página o realizar otras acciones
+        } else {
+            alert("Usuario o contraseña incorrectos");
+        }
+    });
 });
