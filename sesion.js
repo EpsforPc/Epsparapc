@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const password = document.getElementById('password').value;
     
     if (username === "Cliente" && password === "1234") {
-        window.location.href = 'index.html';
+        window.location.href = 'inicio.html';
     } else {
         document.getElementById('message').innerText = "Usuario o contraseña incorrectos.";
     }
