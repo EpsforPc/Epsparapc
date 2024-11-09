@@ -12,7 +12,7 @@
     <header class="hero">
         <nav class="nav container">
             <div class="nav__logo">
-                <h2 class="nav__title">Eps para computadores</h2>
+                <h2 class="nav__title">SACAR UNA CITA</h2>
             </div>
 
             <ul class="nav__link nav__link--menu">
@@ -32,21 +32,79 @@
                 <img src="./images/menu.svg" class="nav__img" alt="">
             </div>
         </nav>
-
-                
-    <iframe
-    id="JotFormIFrame-242926331524050"
-    title="Sacar una cita"
-    onload="window.parent.scrollTo(0,0)"
-    allowtransparency="true"
-    allow="geolocation; microphone; camera; fullscreen"
-    src="https://form.jotform.com/242926331524050"
-    frameborder="0"
-    style="min-width:100%;max-width:100%;height:539px;border:none;"
-    scrolling="no"
-  >
-  </iframe>
-  <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-  <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-242926331524050']", "https://form.jotform.com/")</script>
-  
+            <center>
+          <form id="citaForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+        
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required><br><br>
+        
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required><br><br>
+        
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required><br><br>
+        
+            <label for="problema">Describe tu problema:</label><br>
+            <textarea id="problema" name="problema" rows="4" cols="50" required></textarea><br><br>
+        
+            <label for="ram">¿Cuánta memoria RAM tiene su computadora?</label><br>
+            <select id="ram" name="ram">
+              <option value="4 GB">4 GB</option>
+              <option value="8 GB">8 GB</option>
+              <option value="16 GB">16 GB</option>
+            </select><br><br>
+        
+            <label for="fecha">Fecha de la cita:</label>
+            <input type="date" id="fecha" name="fecha" required><br><br>
+        
+            <label for="hora">Hora de la cita:</label>
+            <input type="time" id="hora" name="hora" required><br><br>
+        
+            <label for="archivo">Seleccione un archivo:</label>
+            <input type="file" id="archivo" name="archivo"><br><br>
+        
+            <button type="button" onclick="guardarCita()">Enviar</button>
+          </form>
+          </center>
+        
+          <script>
+            function guardarCita() {
+              // Obtener los valores del formulario
+              const nombre = document.getElementById('nombre').value;
+              const apellido = document.getElementById('apellido').value;
+              const telefono = document.getElementById('telefono').value;
+              const correo = document.getElementById('correo').value;
+              const problema = document.getElementById('problema').value;
+              const ram = document.getElementById('ram').value;
+              const fecha = document.getElementById('fecha').value;
+              const hora = document.getElementById('hora').value;
+        
+              // Crear un objeto para la cita
+              const cita = {
+                nombre,
+                apellido,
+                telefono,
+                correo,
+                problema,
+                ram,
+                fecha,
+                hora
+              };
+        
+              // Obtener citas almacenadas previamente o inicializar una lista
+              const citas = JSON.parse(localStorage.getItem('citas')) || [];
+              citas.push(cita);
+        
+              // Guardar citas actualizadas en localStorage
+              localStorage.setItem('citas', JSON.stringify(citas));
+        
+              alert('La cita ha sido guardada correctamente.');
+              document.getElementById('citaForm').reset(); // Limpiar el formulario
+            }
+          </script>
+        </body>
+        </html>
+        
     </header>
