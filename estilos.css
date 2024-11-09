@@ -84,7 +84,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #fff;
+    background-color: #000000;
     transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Cambia la función de tiempo */
 }
 .nav__links:hover::after {
@@ -104,56 +104,6 @@ body {
 
 .nav__close {
     display: var(--show, none);
-}
-
-/* Testimone */
-
-/* Testimony */
-
-.testimony{
-    background-color: #f6f6f6;
-}
-.testimony__container{
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    gap: 1em;
-    align-items: center;
-}
-.testimony__body{
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2em;
-    grid-column: 2/3;
-    grid-row: 1/2;
-    opacity: 0;
-    pointer-events: none;
-}
-.testimony__body--show{
-    pointer-events: unset;
-    opacity: 1;
-    transition: opacity 1.5s ease-in-out;
-}
-.testimony__img{
-    width: 270px;
-    height: 260px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 50% 30%;
-}
-.testimony__texts{
-    max-width: 700px;
-}
-.testimony__course{
-    background-color: rgb(115, 143, 226);
-    color: #fff;
-    display: inline-block;
-    padding: 5px;
-}
-.testimony__arrow{
-    width: 90%;
-    cursor: pointer;
 }
 
 /* Hero container */
@@ -250,13 +200,13 @@ body {
     margin-bottom: 30px;
 }
 .footer__title, .footer__newsletter{
-    color: #000000;
+    color: #ffffff;
 }
 .footer__container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000000;
     padding-bottom: 5px;
 }
 .nav--footer{
@@ -280,7 +230,7 @@ body {
     overflow: hidden;
 }
 .footer__input{
-    background-color: #fff;
+    background-color: #ffffff;
     height: 50px;
     display: block;
     padding-left: 10px;
@@ -303,10 +253,10 @@ body {
     display: inline-block;
     height: 20px;
     padding: 0 20px;
-    background-color: #2091F9;
+    background-color: #ffffff;
     border: none;
     font-size: 1rem;
-    color: #fff;
+    color: #000000;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -322,7 +272,7 @@ body {
 .footer__copy{
     --padding-container: 15px 0;
     text-align: center;
-    color: #fff;
+    color: #000000;
 }
 .footer__copyright{
     font-weight: 300;
@@ -331,6 +281,9 @@ body {
 .footer__icons{
     margin-bottom: 10px;
     color: #000000;
+    justify-content: center;  /* Centra los íconos horizontalmente */
+    gap: 20px;  /* Espacio entre íconos en la fila horizontal */
+    padding: 20px;
 }
 .footer__img{
     width: 30px;
