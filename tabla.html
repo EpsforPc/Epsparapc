@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla de Citas</title>
+  <link rel="stylesheet" href="tabla.css">
+</head>
+<body>
+    <center>
+  <h1>Tabla de citas</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Teléfono</th>
+        <th>Correo</th>
+        <th>Problema</th>
+        <th>RAM</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+      </tr>
+    </thead>
+    <tbody id="tablaCitas"></tbody>
+  </table>
+  </center>
+
+  <script>
+    function cargarCitas() {
+      // Obtener las citas del localStorage
+      const citas = JSON.parse(localStorage.getItem('citas')) || [];
+
+      // Obtener el cuerpo de la tabla
+      const tablaCitas = document.getElementById('tablaCitas');
+
+      // Añadir cada cita como una fila en la tabla
+      citas.forEach(cita => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+          <td>${cita.nombre}</td>
+          <td>${cita.apellido}</td>
+          <td>${cita.telefono}</td>
+          <td>${cita.correo}</td>
+          <td>${cita.problema}</td>
+          <td>${cita.ram}</td>
+          <td>${cita.fecha}</td>
+          <td>${cita.hora}</td>
+        `;
+        tablaCitas.appendChild(fila);
+      });
+    }
+
+    // Cargar citas cuando se carga la página
+    window.onload = cargarCitas;
+  </script>
+</body>
+</html>
